@@ -2,6 +2,7 @@
 """ import the module """
 import uuid
 from datetime import datetime
+from models import storage
 """ define the class """
 class BaseModel:
     """ instances """
@@ -16,6 +17,8 @@ class BaseModel:
                     self.__dict__[k] = datetime.today()
                 else:
                     self.__dict__[k] = v
+        if self.id != False:
+            storage.new(self)
     """ function for string output """
     def __str__(self):
         str(self.id)
@@ -24,6 +27,7 @@ class BaseModel:
     """ updating instance updated_at """
     def save(self):
         self.updated_at = datetime.now()
+        storage.save()
 
     """ dict output """
     def to_dict(self):
