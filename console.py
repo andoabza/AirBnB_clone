@@ -7,6 +7,7 @@ import cmd
 class HBNBCommand(cmd.Cmd):
     """ display text """
     prompt = "(hbnb)"
+    name = ["BaseModel", "User", "State", "City", "Place", "Amenity", "Review"]
     """ for quit command """
     def do_quit(self, line):
         """Quit command to exit the program"""
@@ -18,9 +19,20 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, arg):
         if len(arg) == 0:
             print("** class name missing **")
-        elif arg  == "BaseModel":
+        elif arg in HBNBCommand.name:
             models.storage.save()
-            print(models.base_model.BaseModel().id)
+            if arg in {"User"}:
+                print(models.user.User().id)
+            if arg in {"BaseModel"}:
+                print(models.base_model.BaseModel().id)
+            if arg in {"State"}:
+                print(models.state.State().id)
+            if arg in {"City"}:
+                print(models.city.City().id)
+            if arg in {"Place"}:
+                print(models.place.Place().id)
+            if arg in {"Amenity"}:
+                print(models.amenity.Amenity().id)
         else:
             print("** class doesn't exist **")
     """Prints the string representation of an instance based onthe class name and id"""
@@ -30,11 +42,11 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
 
-        if new_line[0] not in {"BaseModel"}:
+        if new_line[0] not in HBNBCommand.name:
             print("** class doesn't exist **")
             return
 
-        if len(arg) < 2:
+        if len(new_line) < 2:
             print("** instance id missing **")
             return
         data = models.storage.all()
@@ -52,7 +64,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
         args = arg.split()
-        if args[0] not in {"BaseModel"}:
+        if args[0] not in HBNBCommand.name:
             print("** class doesn't exist **")
             return
 
@@ -67,14 +79,17 @@ class HBNBCommand(cmd.Cmd):
             models.storage.save()
         else:
             print("** no instance found **")
-    
+    """ function print basedd on arg"""
     def do_all(self, arg):
- 
-        if len(arg) == 0 or arg  == "BaseModel":
-            dat = models.base_model.BaseModel()
-            print(f"[\"{dat}\"]")
+        objects = models.storage.all()
+        if arg:
+            if arg not in HBNBCommand.name:
+                print("** class doesn't exist **")
+                return
+            else:
+                print([str(obj) for obj in objects.values() if type(obj).__name__ == arg])
         else:
-            print("** class doesn't exist **")
+            print([str(obj) for obj in objects.values()])
 
     def do_update(self, arg):
         """Updates an instance based on the class name and id"""
@@ -83,7 +98,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
         args = arg.split()
-        if args[0] not in {"BaseModel"}:
+        if args[0] not in HBNBCommand.name:
             print("** class doesn't exist **")
             return
 
