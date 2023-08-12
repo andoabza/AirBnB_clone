@@ -6,7 +6,7 @@ import cmd
 """ define the class"""
 class HBNBCommand(cmd.Cmd):
     """ display text """
-    prompt = "(hbnb)"
+    prompt = "(hbnb) "
     name = ["BaseModel", "User", "State", "City", "Place", "Amenity", "Review"]
     """ for quit command """
     def onecmd(self, s):
@@ -17,6 +17,7 @@ class HBNBCommand(cmd.Cmd):
             var = [str(obj) for obj in objects.values() if type(obj).__name__ + ".all()" == s]
             val = str(var).replace("\"", '')
             print(val)
+            return
         if s in coun:
             var = [str(obj) for obj in objects.values() if type(obj).__name__ + ".count()" == s]
             a = str(var).replace("[", '')
@@ -26,6 +27,7 @@ class HBNBCommand(cmd.Cmd):
             print(x)
         else:
             return cmd.Cmd.onecmd(self, s)
+   
     def do_quit(self, line):
         """Quit command to exit the program"""
         return True
@@ -155,9 +157,6 @@ class HBNBCommand(cmd.Cmd):
 
         setattr(obj, attr_name, attr_value)
         obj.save()
-    
-
-
-
+  
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
