@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" import cmd"""
+""" import everything"""
 import models
 import json
 import cmd
@@ -9,6 +9,13 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb)"
     name = ["BaseModel", "User", "State", "City", "Place", "Amenity", "Review"]
     """ for quit command """
+    def onecmd(self, s):
+        objects = models.storage.all()
+        mane = ["BaseModel.all()", "User.all()", "State.all()", "City.all()", "Place.all()", "Amenity.all()", "Review.all()"]
+        if s in mane:
+            print([str(obj) for obj in objects.values() if type(obj).__name__ + ".all()" == s])
+        else:
+            return cmd.Cmd.onecmd(self, s)
     def do_quit(self, line):
         """Quit command to exit the program"""
         return True
@@ -138,8 +145,7 @@ class HBNBCommand(cmd.Cmd):
 
         setattr(obj, attr_name, attr_value)
         obj.save()
-
-
+    
 
 
 
