@@ -12,8 +12,18 @@ class HBNBCommand(cmd.Cmd):
     def onecmd(self, s):
         objects = models.storage.all()
         mane = ["BaseModel.all()", "User.all()", "State.all()", "City.all()", "Place.all()", "Amenity.all()", "Review.all()"]
+        coun = ["BaseModel.count()", "User.count()", "State.count()", "City.count()", "Place.count()", "Amenity.count()", "Review.count()"]
         if s in mane:
-            print([str(obj) for obj in objects.values() if type(obj).__name__ + ".all()" == s])
+            var = [str(obj) for obj in objects.values() if type(obj).__name__ + ".all()" == s]
+            val = str(var).replace("\"", '')
+            print(val)
+        if s in coun:
+            var = [str(obj) for obj in objects.values() if type(obj).__name__ + ".count()" == s]
+            a = str(var).replace("[", '')
+            b = a.replace("]", '')
+            c = s.replace(".count()", '')
+            x = b.count(c)
+            print(x)
         else:
             return cmd.Cmd.onecmd(self, s)
     def do_quit(self, line):
