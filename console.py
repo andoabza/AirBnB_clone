@@ -27,7 +27,7 @@ class HBNBCommand(cmd.Cmd):
             print(x)
         else:
             return cmd.Cmd.onecmd(self, s)
-   
+    """ exit the cmd"""
     def do_quit(self, line):
         """Quit command to exit the program"""
         return True
@@ -35,6 +35,7 @@ class HBNBCommand(cmd.Cmd):
     def do_EOF(self, line):
         """exit command to end the file"""
         return True
+    """ create class instance"""
     def do_create(self, arg):
         if len(arg) == 0:
             print("** class name missing **")
@@ -76,7 +77,7 @@ class HBNBCommand(cmd.Cmd):
 
         else:
             print("** no instance found **")    
-
+    """ delete specified class instance"""
     def do_destroy(self, arg):
         if not arg:
             print("** class name missing **")
@@ -110,8 +111,8 @@ class HBNBCommand(cmd.Cmd):
         else:
             print([str(obj) for obj in objects.values()])
 
+    """Updates an instance based on the class name and id"""
     def do_update(self, arg):
-        """Updates an instance based on the class name and id"""
         if not arg:
             print("** class name missing **")
             return
