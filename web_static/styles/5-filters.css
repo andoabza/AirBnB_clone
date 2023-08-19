@@ -1,0 +1,49 @@
+.filters {
+    margin-left: 17%;
+    margin-right: 17%;
+    /* color: white; */
+    height: 70px;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;}
+    .location {
+        position: fixed;
+        left: 100px;
+        top: 100px;
+        height: 73px;
+        width: 25%;
+        border: 1px solid transparent;
+        border-right-color: #DDDDDD;
+    }
+    .amenity {
+            position: fixed;
+            top: 100px;
+            left: 26em;
+            height: 73px;
+            width: 25%;
+        }
+    
+    h3{
+        font-weight: 600;
+    }
+    h4{
+        font-weight: 400;
+        font-size: 14px;
+        margin-top: -14px;
+    }
+    button {
+        font-size: 18px;
+        margin-top: 10px;
+        height: 48px;
+        width: 20%;
+        border-color: transparent;
+        border-radius: 4px;
+        position: fixed;
+        right: 230px;
+        top: 103px;
+
+        background-color: crimson;   
+    }
+    button:hover {
+        opacity: 90%;
+    }
