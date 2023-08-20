@@ -3,9 +3,6 @@ footer {
     height: 60px;
     width: 100%;
     border: 1px solid transparent;
-    border-top-color: #CCCCCC;   
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    border-top-color: #CCCCCC; 
     text-align: center;
 }

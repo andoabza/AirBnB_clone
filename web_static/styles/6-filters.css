@@ -7,20 +7,20 @@
     border: 1px solid #DDDDDD;
     border-radius: 4px;}
     .locations {
-        position: fixed;
-        left: 100px;
+        position: absolute;
+        left: 12.2em;
         top: 100px;
         height: 73px;
-        width: 25%;
+        width: 19%;
         border: 1px solid transparent;
         border-right-color: #DDDDDD;
     }
     .amenities {
-            position: fixed;
+            position: absolute;
             top: 100px;
-            left: 26em;
+            left: 30.8em;
             height: 73px;
-            width: 25%;   
+            width: 19%;   
         }
     
     h3{
@@ -46,12 +46,11 @@
         border-radius: 4px;
         background-color: #FAFAFA;
         border: 1px solid #DDDDDD;
-        width: 16.5em;
-        margin-left: 5em;
+        width: 15.5em;
+        /* margin-left: em; */
         display: none;
     }
     .sec{
-        margin-left: 5.6em;
         height: 14.5em;
     }
     ul li{
