@@ -6,7 +6,7 @@
     width: 100%;
     border: 1px solid #DDDDDD;
     border-radius: 4px;}
-    .location {
+    .locations {
         position: fixed;
         left: 100px;
         top: 100px;
@@ -15,7 +15,7 @@
         border: 1px solid transparent;
         border-right-color: #DDDDDD;
     }
-    .amenity {
+    .amenities {
             position: fixed;
             top: 100px;
             left: 26em;

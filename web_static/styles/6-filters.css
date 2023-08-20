@@ -6,7 +6,7 @@
     width: 100%;
     border: 1px solid #DDDDDD;
     border-radius: 4px;}
-    .location {
+    .locations {
         position: fixed;
         left: 100px;
         top: 100px;
@@ -15,7 +15,7 @@
         border: 1px solid transparent;
         border-right-color: #DDDDDD;
     }
-    .amenity {
+    .amenities {
             position: fixed;
             top: 100px;
             left: 26em;
@@ -44,9 +44,11 @@
     .popover{
         list-style: none;
         border-radius: 4px;
+        background-color: #FAFAFA;
+        border: 1px solid #DDDDDD;
         width: 16.5em;
         margin-left: 5em;
-        color: white;
+        display: none;
     }
     .sec{
         margin-left: 5.6em;
@@ -59,10 +61,11 @@
     .sec li{
         margin-top: 3.2em;
     }
-    ul:hover{
-        background-color: #FAFAFA;
-        border: 1px solid #DDDDDD;
-        color: black;
+    .locations:hover .popover{
+        display: block;
+    }
+    .amenities:hover .popover{
+        display: block;
     }
 
     button:hover {
