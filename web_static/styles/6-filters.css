@@ -20,7 +20,7 @@
             top: 100px;
             left: 26em;
             height: 73px;
-            width: 25%;
+            width: 25%;   
         }
     
     h3{
@@ -38,13 +38,33 @@
         height: 48px;
         width: 20%;
         border-color: transparent;
-        border-radius: 4px;
-        /* position: fixed;
-        right: 230px;
-        top: 103px; */
-
-        background-color: crimson;   
+        background-color: crimson;
+        border-radius: 4px;   
     }
+    .popover{
+        list-style: none;
+        border-radius: 4px;
+        width: 16.5em;
+        margin-left: 5em;
+        color: white;
+    }
+    .sec{
+        margin-left: 5.6em;
+        height: 14.5em;
+    }
+    ul li{
+        margin-right: 12em;
+        margin-top: 25px;
+    }
+    .sec li{
+        margin-top: 3.2em;
+    }
+    ul:hover{
+        background-color: #FAFAFA;
+        border: 1px solid #DDDDDD;
+        color: black;
+    }
+
     button:hover {
         opacity: 90%;
     }
